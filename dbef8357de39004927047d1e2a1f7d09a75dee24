@@ -1,0 +1,8 @@
+Code-Review+2: Davanum Srinivas (dims) <davanum@gmail.com>
+Workflow+1: Davanum Srinivas (dims) <davanum@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 01 Jun 2015 21:13:24 +0000
+Reviewed-on: https://review.openstack.org/187299
+Project: openstack/deb-python-oslo.serialization
+Branch: refs/heads/feature/use-iso-8601-date-time
