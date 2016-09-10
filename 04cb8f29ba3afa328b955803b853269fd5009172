@@ -1,0 +1,8 @@
+Code-Review+2: Joshua Harlow <jxharlow@godaddy.com>
+Workflow+1: Joshua Harlow <jxharlow@godaddy.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 03 May 2016 18:43:10 +0000
+Reviewed-on: https://review.openstack.org/311335
+Project: openstack/deb-python-oslo.serialization
+Branch: refs/heads/stable/mitaka
