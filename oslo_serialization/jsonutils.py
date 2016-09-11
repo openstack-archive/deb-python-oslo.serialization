@@ -43,6 +43,7 @@ from oslo_utils import timeutils
 import six
 import six.moves.xmlrpc_client as xmlrpclib
 
+ipaddress = importutils.try_import("ipaddress")
 netaddr = importutils.try_import("netaddr")
 
 _nasty_type_tests = [inspect.ismodule, inspect.isclass, inspect.ismethod,
@@ -51,12 +52,12 @@ _nasty_type_tests = [inspect.ismodule, inspect.isclass, inspect.ismethod,
                      inspect.iscode, inspect.isbuiltin, inspect.isroutine,
                      inspect.isabstract]
 
-_simple_types = (six.string_types + six.integer_types
+_simple_types = ((six.text_type,) + six.integer_types
                  + (type(None), bool, float))
 
 
 def to_primitive(value, convert_instances=False, convert_datetime=True,
-                 level=0, max_depth=3):
+                 level=0, max_depth=3, encoding='utf-8'):
     """Convert a complex object into primitives.
 
     Handy for JSON serialization. We can optionally handle instances,
@@ -91,6 +92,11 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
     if isinstance(value, _simple_types):
         return value
 
+    if isinstance(value, six.binary_type):
+        if six.PY3:
+            value = value.decode(encoding=encoding)
+        return value
+
     # It's not clear why xmlrpclib created their own DateTime type, but
     # for our purposes, make it a datetime type which is explicitly
     # handled
@@ -107,6 +113,11 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         return six.text_type(value)
 
     if netaddr and isinstance(value, netaddr.IPAddress):
+        return six.text_type(value)
+
+    if ipaddress and isinstance(value,
+                                (ipaddress.IPv4Address,
+                                 ipaddress.IPv6Address)):
         return six.text_type(value)
 
     # value of itertools.count doesn't get caught by nasty_type_tests
@@ -126,7 +137,7 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
         return 'mock'
 
     if level > max_depth:
-        return '?'
+        return None
 
     # The try block may not be necessary after the class check above,
     # but just in case ...
@@ -135,10 +146,11 @@ def to_primitive(value, convert_instances=False, convert_datetime=True,
                                       convert_instances=convert_instances,
                                       convert_datetime=convert_datetime,
                                       level=level,
-                                      max_depth=max_depth)
+                                      max_depth=max_depth,
+                                      encoding=encoding)
         if isinstance(value, dict):
-            return dict((recursive(k), recursive(v))
-                        for k, v in six.iteritems(value))
+            return {recursive(k): recursive(v)
+                    for k, v in six.iteritems(value)}
         elif hasattr(value, 'iteritems'):
             return recursive(dict(value.iteritems()), level=level + 1)
         # Python 3 does not have iteritems

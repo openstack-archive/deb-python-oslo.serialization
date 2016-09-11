@@ -1,3 +1,15 @@
+python-oslo.serialization (2.13.0-1) experimental; urgency=medium
+
+  [ Corey Bryant ]
+  * New upstream release.
+  * d/control: Align (Build-)Depends with upstream.
+  * d/p/no-version-for-python-tz.patch: Dropped. No longer needed.
+
+  [ Thomas Goirand ]
+  * Fixed VCS URLs to use OpenStack's Gerrit.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 11 Sep 2016 22:52:36 +0200
+
 python-oslo.serialization (2.7.0-1) experimental; urgency=medium
 
   [ Ondřej Nový ]
