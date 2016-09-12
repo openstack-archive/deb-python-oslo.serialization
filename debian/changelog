@@ -7,6 +7,7 @@ python-oslo.serialization (2.13.0-1) experimental; urgency=medium
 
   [ Thomas Goirand ]
   * Fixed VCS URLs to use OpenStack's Gerrit.
+  * Simplified debian/rules with openstack-pkg-tools >= 52~ goodies.
 
  -- Thomas Goirand <zigo@debian.org>  Sun, 11 Sep 2016 22:52:36 +0200
 
