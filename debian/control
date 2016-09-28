@@ -24,7 +24,7 @@ Build-Depends-Indep: python-coverage,
                      python-oslo.i18n (>= 2.1.0),
                      python-oslo.utils (>= 3.16.0),
                      python-oslosphinx (>= 2.5.0),
-                     python-oslotest (>= 1.10.0),
+                     python-oslotest (>= 1:1.10.0),
                      python-six (>= 1.9.0),
                      python-tz,
                      python3-mock (>= 2.0),
@@ -32,7 +32,7 @@ Build-Depends-Indep: python-coverage,
                      python3-netaddr (>= 0.7.12),
                      python3-oslo.i18n (>= 2.1.0),
                      python3-oslo.utils (>= 3.16.0),
-                     python3-oslotest (>= 1.10.0),
+                     python3-oslotest (>= 1:1.10.0),
                      python3-six (>= 1.9.0),
                      python3-tz,
                      subunit,
@@ -86,33 +86,3 @@ Description: utilities for serialization , especially JSON - doc
  serialization features, especially working with JSON.
  .
  This package contains the documentation.
-
-Package: python-oslo-serialization
-Section: oldlibs
-Priority: extra
-Architecture: all
-Depends: python-oslo.serialization,
-         ${misc:Depends},
-Description: transitional dummy package for python-oslo-serialization
- This transitional package is safe to remove and use
- python-oslo.serialization instead.
-
-Package: python-oslo-serialization-doc
-Section: oldlibs
-Priority: extra
-Architecture: all
-Depends: python-oslo.serialization-doc,
-         ${misc:Depends},
-Description: transitional dummy package for python-oslo-serialization-doc
- This transitional package is safe to remove and use
- python-oslo.serialization-doc instead.
-
-Package: python3-oslo-serialization
-Section: oldlibs
-Priority: extra
-Architecture: all
-Depends: python3-oslo.serialization,
-         ${misc:Depends},
-Description: transitional dummy package for python3-oslo-serialization
- This transitional package is safe to remove and use
- python3-oslo.serialization instead.
