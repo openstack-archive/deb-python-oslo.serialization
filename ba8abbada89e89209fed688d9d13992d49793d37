@@ -1,0 +1,8 @@
+Code-Review+2: Joshua Harlow <jxharlow@godaddy.com>
+Workflow+1: Joshua Harlow <jxharlow@godaddy.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 04 Nov 2016 22:21:39 +0000
+Reviewed-on: https://review.openstack.org/392486
+Project: openstack/deb-python-oslo.serialization
+Branch: refs/heads/master
