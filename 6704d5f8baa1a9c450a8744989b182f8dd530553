@@ -1,0 +1,10 @@
+Code-Review+2: Joshua Harlow <jxharlow@godaddy.com>
+Code-Review+1: zhangguoqing <zhang.guoqing@99cloud.net>
+Code-Review+2: ChangBo Guo(gcb) <glongwave@gmail.com>
+Workflow+1: ChangBo Guo(gcb) <glongwave@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 12 Dec 2016 06:41:18 +0000
+Reviewed-on: https://review.openstack.org/406695
+Project: openstack/deb-python-oslo.serialization
+Branch: refs/heads/master
