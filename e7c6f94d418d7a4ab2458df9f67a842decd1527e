@@ -1,0 +1,8 @@
+Code-Review+2: ChangBo Guo(gcb) <glongwave@gmail.com>
+Workflow+1: ChangBo Guo(gcb) <glongwave@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 24 May 2017 05:04:54 +0000
+Reviewed-on: https://review.openstack.org/467184
+Project: openstack/deb-python-oslo.serialization
+Branch: refs/heads/master
